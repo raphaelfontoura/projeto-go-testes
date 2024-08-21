@@ -20,4 +20,12 @@ jobs:
       with:
         username: raphaelfontoura
         password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-          
+
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v6.7.0
+      with:
+        context: .
+        file: ./Dockerfile
+        push: true
+        tags: raphaelfontoura/go_ci:${{ github.ref_name }}
+        
