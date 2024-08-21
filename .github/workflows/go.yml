@@ -52,7 +52,7 @@ jobs:
     - name: Upload a build artifact
       uses: actions/upload-artifact@v4
       with:
-        name: binary program
+        name: build_program
         path: main
 
   docker:
